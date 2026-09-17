@@ -12,6 +12,21 @@ import NoEncontrado from './pages/NoEncontrado';
 import WhatsAppBoton from './components/WhatsAppBoton';
 import { PRODUCTOS } from './datos';
 
+const URL_BASE = 'https://cocos-silver.vercel.app';
+
+function actualizarMeta(propiedad: string, contenido: string) {
+  let etiqueta = document.querySelector<HTMLMetaElement>(
+    `meta[property="${propiedad}"]`,
+  );
+
+  if (!etiqueta) {
+    etiqueta = document.createElement('meta');
+    etiqueta.setAttribute('property', propiedad);
+    document.head.appendChild(etiqueta);
+  }
+
+  etiqueta.content = contenido;
+}
 
 function TituloPagina() {
   const location = useLocation();
@@ -44,6 +59,9 @@ function TituloPagina() {
     };
 
     let datos = datosPorRuta[location.pathname];
+    let imagen =
+      `${URL_BASE}/productos/joyeria/rubi-corazon.jpeg`;
+    let tipoContenido = 'website';
 
     if (location.pathname.startsWith('/joyeria/')) {
       const id = Number(location.pathname.split('/').pop());
@@ -59,6 +77,14 @@ function TituloPagina() {
             descripcion:
               'El producto solicitado no está disponible en Cocos Silver.',
           };
+
+      if (producto) {
+        imagen = producto.imagen.startsWith('http')
+          ? producto.imagen
+          : `${URL_BASE}${producto.imagen}`;
+
+        tipoContenido = 'product';
+      }
     }
 
     if (!datos) {
@@ -68,6 +94,8 @@ function TituloPagina() {
           'La página solicitada no existe. Visita la colección de Cocos Silver.',
       };
     }
+
+    const urlCanonica = `${URL_BASE}${location.pathname}`;
 
     document.title = datos.titulo;
 
@@ -82,6 +110,26 @@ function TituloPagina() {
     }
 
     metaDescripcion.content = datos.descripcion;
+
+    let canonical = document.querySelector<HTMLLinkElement>(
+      'link[rel="canonical"]',
+    );
+
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+
+    canonical.href = urlCanonica;
+
+    actualizarMeta('og:title', datos.titulo);
+    actualizarMeta('og:description', datos.descripcion);
+    actualizarMeta('og:url', urlCanonica);
+    actualizarMeta('og:type', tipoContenido);
+    actualizarMeta('og:image', imagen);
+    actualizarMeta('og:site_name', 'Cocos Silver');
+    actualizarMeta('og:locale', 'es_GT');
   }, [location.pathname]);
 
   return null;
@@ -91,7 +139,6 @@ function App() {
   return (
     <BrowserRouter>
       <TituloPagina />
-
       <Navbar />
 
       <Routes>
@@ -104,7 +151,6 @@ function App() {
       </Routes>
 
       <WhatsAppBoton />
-
       <Footer />
     </BrowserRouter>
   );
