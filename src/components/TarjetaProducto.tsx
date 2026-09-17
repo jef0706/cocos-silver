@@ -9,7 +9,14 @@ function TarjetaProducto({ producto }: Props) {
   return (
     <article className="tarjeta-producto">
       <div className="tarjeta-producto__imagen">
-        <img src={producto.imagen} alt={producto.nombre} loading="lazy" />
+       <img
+  src={producto.imagen}
+  alt={`${producto.nombre} de Cocos Silver`}
+  width="600"
+  height="450"
+  loading="lazy"
+  decoding="async"
+/>
       </div>
 
       <span className="tarjeta-producto__categoria">{producto.categoria}</span>

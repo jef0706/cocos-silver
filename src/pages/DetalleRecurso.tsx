@@ -4,7 +4,9 @@ import { PRODUCTOS } from '../datos';
 function DetalleRecurso() {
   const { id } = useParams();
 
-  const producto = PRODUCTOS.find((producto) => producto.id === Number(id));
+  const producto = PRODUCTOS.find(
+    (producto) => producto.id === Number(id),
+  );
 
   if (!producto) {
     return (
@@ -21,10 +23,11 @@ function DetalleRecurso() {
   }
 
   const mensajeWhatsApp = encodeURIComponent(
-    `Hola, me interesa ${producto.nombre} de Q${producto.precio}. ¿Está disponible?`
+    `Hola, me interesa ${producto.nombre} de Q${producto.precio}. ¿Está disponible?`,
   );
 
-  const enlaceWhatsApp = `https://wa.me/50236304575?text=${mensajeWhatsApp}`;
+  const enlaceWhatsApp =
+    `https://wa.me/50236304575?text=${mensajeWhatsApp}`;
 
   return (
     <main className="detalle-producto">
@@ -34,7 +37,13 @@ function DetalleRecurso() {
 
       <section className="detalle-producto__contenido">
         <div className="detalle-producto__imagen">
-          <img src={producto.imagen} alt={producto.nombre} />
+          <img
+            src={producto.imagen}
+            alt={`${producto.nombre} de Cocos Silver`}
+            width="900"
+            height="900"
+            decoding="async"
+          />
         </div>
 
         <div className="detalle-producto__info">
@@ -48,7 +57,9 @@ function DetalleRecurso() {
             {producto.descripcion}
           </p>
 
-          <p className="detalle-producto__precio">Q{producto.precio}</p>
+          <p className="detalle-producto__precio">
+            Q{producto.precio}
+          </p>
 
           <a
             href={enlaceWhatsApp}
