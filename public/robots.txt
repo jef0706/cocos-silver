@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://cocos-silver.vercel.app/sitemap.xml
