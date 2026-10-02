@@ -9,6 +9,9 @@ export type Cambio = {
 
 export type EstadoCambio = 'cargando' | 'error' | 'vacio' | 'exito';
 
+// Cambia a false después de capturar el estado vacío.
+const SIMULAR_VACIO = false;
+
 export function useTipoCambio() {
   const [cambio, setCambio] = useState<Cambio | null>(null);
   const [estado, setEstado] = useState<EstadoCambio>('cargando');
@@ -18,6 +21,7 @@ export function useTipoCambio() {
     const controller = new AbortController();
 
     async function cargarCambio() {
+      setCambio(null);
       setEstado('cargando');
 
       try {
@@ -27,10 +31,17 @@ export function useTipoCambio() {
         );
 
         if (!respuesta.ok) {
-          throw new Error(`Error ${respuesta.status}: ${respuesta.statusText}`);
+          throw new Error(`Error ${respuesta.status}`);
         }
 
-        const datos: Cambio = await respuesta.json();
+        const datos: Cambio | null = SIMULAR_VACIO
+          ? {
+              date: '',
+              base: 'USD',
+              quote: 'GTQ',
+              rate: 0,
+            }
+          : await respuesta.json();
 
         if (controller.signal.aborted) return;
 

@@ -6,10 +6,11 @@ type Props = {
 };
 
 function EstadoPeticion({ estado, reintentar }: Props) {
-  if (estado === 'cargando') {
+   if (estado === 'cargando') {
     return (
       <div className="tipo-cambio__cargando" role="status">
-        Consultando el tipo de cambio…
+        <span className="tipo-cambio__spinner" aria-hidden="true" />
+        <span>Consultando el tipo de cambio…</span>
       </div>
     );
   }
@@ -18,6 +19,7 @@ function EstadoPeticion({ estado, reintentar }: Props) {
     return (
       <div role="alert">
         <p>No pudimos consultar el tipo de cambio en este momento.</p>
+
         <button
           type="button"
           className="boton boton--secundario"
@@ -31,7 +33,9 @@ function EstadoPeticion({ estado, reintentar }: Props) {
 
   if (estado === 'vacio') {
     return (
-      <p role="status">No hay un tipo de cambio disponible por ahora.</p>
+      <p role="status">
+        No hay un tipo de cambio disponible por ahora.
+      </p>
     );
   }
 
