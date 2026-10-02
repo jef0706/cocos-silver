@@ -1,16 +1,22 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useLocation,
+} from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import Inicio from './pages/Inicio';
-import Recursos from './pages/Recursos';
-import DetalleRecurso from './pages/DetalleRecurso';
-import Nosotros from './pages/Nosotros';
-import Contacto from './pages/Contacto';
 import Footer from './components/Footer';
-import NoEncontrado from './pages/NoEncontrado';
 import WhatsAppBoton from './components/WhatsAppBoton';
 import { PRODUCTOS } from './datos';
+
+const Recursos = lazy(() => import('./pages/Recursos'));
+const DetalleRecurso = lazy(() => import('./pages/DetalleRecurso'));
+const Nosotros = lazy(() => import('./pages/Nosotros'));
+const Contacto = lazy(() => import('./pages/Contacto'));
+const NoEncontrado = lazy(() => import('./pages/NoEncontrado'));
 
 const URL_BASE = 'https://cocos-silver.vercel.app';
 
@@ -59,8 +65,7 @@ function TituloPagina() {
     };
 
     let datos = datosPorRuta[location.pathname];
-    let imagen =
-      `${URL_BASE}/productos/joyeria/rubi-corazon.jpeg`;
+    let imagen = `${URL_BASE}/productos/joyeria/rubi-corazon.jpeg`;
     let tipoContenido = 'website';
 
     if (location.pathname.startsWith('/joyeria/')) {
@@ -79,10 +84,7 @@ function TituloPagina() {
           };
 
       if (producto) {
-        imagen = producto.imagen.startsWith('http')
-          ? producto.imagen
-          : `${URL_BASE}${producto.imagen}`;
-
+        imagen = new URL(producto.imagen, `${URL_BASE}/`).href;
         tipoContenido = 'product';
       }
     }
@@ -141,14 +143,24 @@ function App() {
       <TituloPagina />
       <Navbar />
 
-      <Routes>
-        <Route path="/" element={<Inicio />} />
-        <Route path="/joyeria" element={<Recursos />} />
-        <Route path="/joyeria/:id" element={<DetalleRecurso />} />
-        <Route path="/nosotros" element={<Nosotros />} />
-        <Route path="/contacto" element={<Contacto />} />
-        <Route path="*" element={<NoEncontrado />} />
-      </Routes>
+      <Suspense
+        fallback={
+          <main aria-busy="true">
+            <p role="status" style={{ padding: '2rem', textAlign: 'center' }}>
+              Cargando página…
+            </p>
+          </main>
+        }
+      >
+        <Routes>
+          <Route path="/" element={<Inicio />} />
+          <Route path="/joyeria" element={<Recursos />} />
+          <Route path="/joyeria/:id" element={<DetalleRecurso />} />
+          <Route path="/nosotros" element={<Nosotros />} />
+          <Route path="/contacto" element={<Contacto />} />
+          <Route path="*" element={<NoEncontrado />} />
+        </Routes>
+      </Suspense>
 
       <WhatsAppBoton />
       <Footer />
