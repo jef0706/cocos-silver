@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import TarjetaProducto from '../components/TarjetaProducto';
 import { PRODUCTOS } from '../datos';
-import TipoCambio from '../components/TipoCambio';
+
 
 function Inicio() {
   const destacados = PRODUCTOS.filter((producto) => producto.destacado);
@@ -55,8 +55,6 @@ function Inicio() {
           </Link>
         </div>
       </section>
-
-      <TipoCambio />
 
       <section className="confianza" id="confianza">
         <span className="hero__etiqueta">Conoce la marca</span>
