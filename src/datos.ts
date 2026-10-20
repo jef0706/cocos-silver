@@ -15,7 +15,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Anillos',
     precio: 175,
     imagen: '/productos/joyeria/zafiro-corazón.jpeg',
-    descripcion: 'Anillo con piedra azul en forma de corazón.',
+    descripcion: 'Un diseño romántico con detalle azul en forma de corazón, ideal para aportar color a tus combinaciones.',
     destacado: true,
   },
   {
@@ -24,7 +24,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Anillos',
     precio: 135,
     imagen: '/productos/joyeria/corazon-martillado.jpeg',
-    descripcion: 'Anillo con piedra azul en forma de corazón y argolla martillada.',
+    descripcion: 'El detalle azul en forma de corazón se combina con una banda de efecto martillado para un estilo especial.',
     destacado: true,
   },
   {
@@ -33,7 +33,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Anillos',
     precio: 175,
     imagen: '/productos/joyeria/rubi-corazon.jpeg',
-    descripcion: 'Anillo con piedra roja en forma de corazón.',
+    descripcion: 'El protagonismo lo tiene su corazón rojo, un detalle llamativo para ocasiones que merecen recordarse.',
     destacado: true,
   },
   {
@@ -42,26 +42,26 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Aretes',
     precio: 155,
     imagen: '/productos/joyeria/argollas-espiral.jpeg',
-    descripcion: 'Argollas plateadas con diseño elegante.',
+    descripcion: 'Argollas con diseño en espiral que aportan movimiento y personalidad a tu estilo diario.',
     destacado: false,
   },
   {
+
     id: 5,
     nombre: 'Corazón Cristal',
     categoria: 'Aretes',
     precio: 140,
     imagen: '/productos/joyeria/corazon-cristal.jpeg',
-    descripcion: 'Aretes con diseño de corazón y piedra transparente.',
+    descripcion: 'Aretes con corazones y detalle transparente, una opción delicada para regalar o complementar tu look.',
     destacado: true,
   },
   {
-
     id: 6,
     nombre: 'Anillo Rosa Flor Ajustable',
     categoria: 'Anillos',
     precio: 140,
     imagen: '/productos/joyeria/anillos/ajustableq140flor-rosa.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Anillo ajustable con motivo de flor rosa, perfecto para quienes prefieren accesorios de inspiración floral.',
     destacado: false,
   },
   {
@@ -70,7 +70,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Anillos',
     precio: 140,
     imagen: '/productos/joyeria/anillos/ajustableq140flor.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Un anillo ajustable con diseño de flor que añade un toque alegre y delicado a cualquier conjunto.',
     destacado: false,
   },
   {
@@ -79,7 +79,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Anillos',
     precio: 100,
     imagen: '/productos/joyeria/anillos/talla5q100-corazonrosadomate.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Anillo con corazón en tono rosado mate, de estilo suave y romántico. Talla indicada: 5.',
     destacado: false,
   },
   {
@@ -88,7 +88,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Anillos',
     precio: 125,
     imagen: '/productos/joyeria/anillos/talla5q125corona.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Un detalle en forma de corona para destacar con un accesorio original. Talla indicada: 5.',
     destacado: false,
   },
   {
@@ -97,7 +97,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Anillos',
     precio: 145,
     imagen: '/productos/joyeria/anillos/talla5q145-corazonesverdes.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Anillo con motivos de corazones verdes, una propuesta fresca y diferente. Talla indicada: 5.',
     destacado: false,
   },
   {
@@ -107,7 +107,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Anillos',
     precio: 100,
     imagen: '/productos/joyeria/anillos/talla6q100vancleefrosado.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Diseño con detalle rosado de inspiración clásica, fácil de combinar con otros accesorios. Talla indicada: 6.',
     destacado: false,
   },
   {
@@ -116,7 +116,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Anillos',
     precio: 130,
     imagen: '/productos/joyeria/anillos/talla6q130buho.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Anillo con figura de búho, ideal para quienes disfrutan de los accesorios con personalidad. Talla indicada: 6.',
     destacado: false,
   },
   {
@@ -125,7 +125,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Anillos',
     precio: 135,
     imagen: '/productos/joyeria/anillos/talla6q135-corazonazultipocadena.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Corazón azul y banda de estilo cadena: una combinación moderna con toque romántico. Talla indicada: 6.',
     destacado: false,
   },
   {
@@ -134,7 +134,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Anillos',
     precio: 140,
     imagen: '/productos/joyeria/anillos/talla6q140corazoncirconia.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Anillo con corazón y detalles de circonia que aportan brillo al diseño. Talla indicada: 6.',
     destacado: false,
   },
   {
@@ -143,26 +143,26 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Anillos',
     precio: 175,
     imagen: '/productos/joyeria/anillos/talla6q175margarita.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Una margarita como protagonista de un anillo delicado y alegre. Talla indicada: 6.',
     destacado: false,
   },
   {
+
     id: 16,
     nombre: 'Anillo Cherrie',
     categoria: 'Anillos',
     precio: 165,
     imagen: '/productos/joyeria/anillos/talla7cherrieq165.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Modelo Cherrie con un estilo especial para lucir solo o combinar con otras piezas. Talla indicada: 7.',
     destacado: false,
   },
   {
-
     id: 17,
     nombre: 'Anillo Piedra Negra',
     categoria: 'Anillos',
     precio: 125,
     imagen: '/productos/joyeria/anillos/talla7q125piedrabegra.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Anillo con detalle de piedra en tono negro, ideal para un estilo sobrio y elegante. Talla indicada: 7.',
     destacado: false,
   },
   {
@@ -171,7 +171,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Anillos',
     precio: 130,
     imagen: '/productos/joyeria/anillos/talla7q130corazonrosado.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'El corazón rosado le da un toque romántico a este anillo. Talla indicada: 7.',
     destacado: false,
   },
   {
@@ -180,7 +180,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Anillos',
     precio: 150,
     imagen: '/productos/joyeria/anillos/talla7q150cisne.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Diseño inspirado en la figura de un cisne, una opción delicada y diferente. Talla indicada: 7.',
     destacado: false,
   },
   {
@@ -189,7 +189,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Anillos',
     precio: 170,
     imagen: '/productos/joyeria/anillos/talla7q170tulipan.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Anillo con motivo de tulipán, pensado para quienes aman los detalles florales. Talla indicada: 7.',
     destacado: false,
   },
   {
@@ -198,7 +198,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Anillos',
     precio: 175,
     imagen: '/productos/joyeria/anillos/talla7q175-corazonazulconcirconia.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Corazón azul acompañado de detalles de circonia para un toque de brillo. Talla indicada: 7.',
     destacado: false,
   },
   {
@@ -208,7 +208,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Anillos',
     precio: 175,
     imagen: '/productos/joyeria/anillos/talla7q175-corazonrojoconcirconia.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Corazón rojo con detalles de circonia, una pieza vistosa de inspiración romántica. Talla indicada: 7.',
     destacado: false,
   },
   {
@@ -217,7 +217,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Anillos',
     precio: 195,
     imagen: '/productos/joyeria/anillos/talla7q195flor.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Diseño floral con un aire delicado, ideal para completar un atuendo especial. Talla indicada: 7.',
     destacado: false,
   },
   {
@@ -226,7 +226,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Anillos',
     precio: 210,
     imagen: '/productos/joyeria/anillos/talla7q210cuadro-ambarconcirconia.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Diseño de figura cuadrada en tono ámbar con detalles de circonia. Talla indicada: 7.',
     destacado: false,
   },
   {
@@ -235,7 +235,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Aretes',
     precio: 220,
     imagen: '/productos/joyeria/aretes/argolla5cmq220.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Argollas de aproximadamente 5 cm, una opción protagonista para destacar tu estilo.',
     destacado: false,
   },
   {
@@ -244,7 +244,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Aretes',
     precio: 140,
     imagen: '/productos/joyeria/aretes/argollacorazon1-5cmq140.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Argollas con diseño de corazón de aproximadamente 1.5 cm, ideales para un toque romántico.',
     destacado: false,
   },
   {
@@ -253,7 +253,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Aretes',
     precio: 115,
     imagen: '/productos/joyeria/aretes/bolitaatrasverdeq115.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Aretes con detalle verde y cierre tipo bolita posterior, una combinación fresca y original.',
     destacado: false,
   },
   {
@@ -263,7 +263,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Aretes',
     precio: 170,
     imagen: '/productos/joyeria/aretes/corazoncirconia1cmq170.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Aretes con corazones y detalles de circonia. Medida indicada: aproximadamente 1 cm.',
     destacado: false,
   },
   {
@@ -272,7 +272,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Aretes',
     precio: 140,
     imagen: '/productos/joyeria/aretes/corazoncirconiaq140.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Diseño de corazón con detalles de circonia para dar brillo a tus combinaciones.',
     destacado: false,
   },
   {
@@ -281,7 +281,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Aretes',
     precio: 150,
     imagen: '/productos/joyeria/aretes/entorchado2cmq150.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Aretes de diseño entorchado de aproximadamente 2 cm, con textura y personalidad.',
     destacado: false,
   },
   {
@@ -290,7 +290,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Aretes',
     precio: 110,
     imagen: '/productos/joyeria/aretes/negroconbolitaatrasq110.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Aretes con detalle negro y cierre tipo bolita posterior, fáciles de combinar con distintos estilos.',
     destacado: false,
   },
   {
@@ -299,7 +299,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Aretes',
     precio: 80,
     imagen: '/productos/joyeria/aretes/ositobolitaatrasq80.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Un diseño con figura de osito y cierre tipo bolita posterior, ideal para un look divertido.',
     destacado: false,
   },
   {
@@ -308,7 +308,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Aretes',
     precio: 170,
     imagen: '/productos/joyeria/aretes/q170.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Modelo de aretes pendiente de identificar. Escríbenos para confirmar los detalles antes de comprar.',
     destacado: false,
   },
   {
@@ -318,7 +318,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Gargantillas',
     precio: 305,
     imagen: '/productos/joyeria/gargantillas/cartier60cmq305.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Gargantilla de diseño clásico y presencia elegante. Largo indicado: aproximadamente 60 cm.',
     destacado: false,
   },
   {
@@ -327,7 +327,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Gargantillas',
     precio: 330,
     imagen: '/productos/joyeria/gargantillas/corazonpandoraq330.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Gargantilla con motivo de corazón, ideal para un detalle romántico y especial.',
     destacado: false,
   },
   {
@@ -336,7 +336,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Gargantillas',
     precio: 215,
     imagen: '/productos/joyeria/gargantillas/coronapandoraq215.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Gargantilla con motivo de corona, un diseño para quienes buscan un accesorio con personalidad.',
     destacado: false,
   },
   {
@@ -345,7 +345,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Dijes',
     precio: 400,
     imagen: '/productos/joyeria/gargantillas/dijes/anclaq400.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Dije con figura de ancla, una opción con inspiración náutica para personalizar tu cadena.',
     destacado: false,
   },
   {
@@ -354,7 +354,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Dijes',
     precio: 180,
     imagen: '/productos/joyeria/gargantillas/dijes/auroradisneyq180.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Dije con motivo de Aurora, pensado para quienes disfrutan de accesorios inspirados en cuentos.',
     destacado: false,
   },
   {
@@ -364,7 +364,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Dijes',
     precio: 145,
     imagen: '/productos/joyeria/gargantillas/dijes/corazon145.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Un dije con forma de corazón que añade un toque romántico a tu cadena favorita.',
     destacado: false,
   },
   {
@@ -373,7 +373,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Dijes',
     precio: 100,
     imagen: '/productos/joyeria/gargantillas/dijes/perritoq100.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Dije con figura de perrito, un detalle encantador para amantes de las mascotas.',
     destacado: false,
   },
   {
@@ -382,7 +382,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Gargantillas',
     precio: 230,
     imagen: '/productos/joyeria/gargantillas/herbariopandoraq230.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Gargantilla con diseño de inspiración botánica, ideal para quienes prefieren motivos naturales.',
     destacado: false,
   },
   {
@@ -391,7 +391,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Gargantillas',
     precio: 225,
     imagen: '/productos/joyeria/gargantillas/juegogotaq225.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Juego de joyería con diseño de gota, una opción coordinada para completar tu estilo.',
     destacado: false,
   },
   {
@@ -400,7 +400,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Gargantillas',
     precio: 180,
     imagen: '/productos/joyeria/gargantillas/lazocorazonq180.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Gargantilla con corazón y motivo de lazo, una combinación femenina y delicada.',
     destacado: false,
   },
   {
@@ -410,7 +410,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Gargantillas',
     precio: 145,
     imagen: '/productos/joyeria/gargantillas/lazolargo45cmq145.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Gargantilla con detalle de lazo, de estilo sencillo y elegante. Largo indicado: aproximadamente 45 cm.',
     destacado: false,
   },
   {
@@ -419,7 +419,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Gargantillas',
     precio: 200,
     imagen: '/productos/joyeria/gargantillas/mariposatornasolq200.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Un diseño de mariposa con efecto tornasol que aporta color y originalidad a tus accesorios.',
     destacado: false,
   },
   {
@@ -428,7 +428,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Gargantillas',
     precio: 210,
     imagen: '/productos/joyeria/gargantillas/valentino55cmq210.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Gargantilla de líneas clásicas para lucir sola o acompañada de otros accesorios. Largo indicado: aproximadamente 55 cm.',
     destacado: false,
   },
   {
@@ -437,7 +437,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Gargantillas',
     precio: 200,
     imagen: '/productos/joyeria/gargantillas/valentinocorazon55cmq200.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Gargantilla con motivo de corazón y diseño elegante. Largo indicado: aproximadamente 55 cm.',
     destacado: false,
   },
   {
@@ -446,7 +446,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Pulseras',
     precio: 290,
     imagen: '/productos/joyeria/pulseras/4mariposaq290.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Pulsera con cuatro motivos de mariposa, un detalle encantador para quienes aman la naturaleza.',
     destacado: false,
   },
   {
@@ -455,7 +455,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Pulseras',
     precio: 220,
     imagen: '/productos/joyeria/pulseras/6mariposaq220.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Pulsera con seis motivos de mariposa que aportan movimiento y un toque alegre.',
     destacado: false,
   },
   {
@@ -465,7 +465,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Pulseras',
     precio: 200,
     imagen: '/productos/joyeria/pulseras/bismarkq200.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Pulsera con diseño de cadena estilo Bismark, una opción clásica y fácil de combinar.',
     destacado: false,
   },
   {
@@ -474,7 +474,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Pulseras',
     precio: 220,
     imagen: '/productos/joyeria/pulseras/corazoncironiaq220.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Pulsera con detalle de corazón y circonia, ideal para añadir un toque de brillo.',
     destacado: false,
   },
   {
@@ -483,7 +483,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Pulseras',
     precio: 250,
     imagen: '/productos/joyeria/pulseras/corazonlatidoq250.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'El motivo de corazón y latido hace de esta pulsera un detalle especial para regalar.',
     destacado: false,
   },
   {
@@ -492,7 +492,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Pulseras',
     precio: 170,
     imagen: '/productos/joyeria/pulseras/corazonpuntodeluzq170.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Pulsera con corazón y detalle tipo punto de luz, de inspiración delicada y romántica.',
     destacado: false,
   },
   {
@@ -501,26 +501,26 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Pulseras',
     precio: 90,
     imagen: '/productos/joyeria/pulseras/eslabonbolitasq90.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Pulsera con eslabones y detalles de bolitas, ideal para combinar con otras piezas.',
     destacado: false,
   },
   {
+
     id: 55,
     nombre: 'Pulsera Estrella',
     categoria: 'Pulseras',
     precio: 195,
     imagen: '/productos/joyeria/pulseras/estrellaq195.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Una estrella como protagonista de una pulsera sencilla y llena de personalidad.',
     destacado: false,
   },
   {
-
     id: 56,
     nombre: 'Pulsera Flor',
     categoria: 'Pulseras',
     precio: 270,
     imagen: '/productos/joyeria/pulseras/florq270.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Pulsera con detalle de flor, perfecta para acompañar un estilo fresco y delicado.',
     destacado: false,
   },
   {
@@ -529,7 +529,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Pulseras',
     precio: 115,
     imagen: '/productos/joyeria/pulseras/gatitoq115.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Pulsera con motivo de gatito, un accesorio divertido para quienes aman los felinos.',
     destacado: false,
   },
   {
@@ -538,7 +538,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Pulseras',
     precio: 100,
     imagen: '/productos/joyeria/pulseras/valentinocorazonq100.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Pulsera con detalle de corazón y diseño de inspiración clásica, ideal para regalar.',
     destacado: false,
   },
   {
@@ -547,7 +547,7 @@ export const PRODUCTOS: Producto[] = [
     categoria: 'Pulseras',
     precio: 170,
     imagen: '/productos/joyeria/pulseras/vancleefq170.jpg',
-    descripcion: 'Consulta la disponibilidad y los detalles de esta joya por WhatsApp.',
+    descripcion: 'Pulsera de inspiración clásica con detalles decorativos para complementar tu estilo.',
     destacado: false,
   },
 ];
