@@ -32,10 +32,10 @@ export async function cargarCatalogo(): Promise<Producto[]> {
           Boolean(producto.nombre && producto.imagen) &&
           Number.isFinite(producto.precio)
       );
-  } catch (error) {
-    console.error('No se pudo consultar Sanity:', error);
-
-    // Mantener el catálogo original si Sanity no responde.
-    return PRODUCTOS;
-  }
+    } catch (error) {
+  console.error('No se pudo consultar Sanity:', error);
+// No mostrar productos posiblemente agotados
+  // cuando falle la conexión con Sanity.
+  return [];
+}
 }

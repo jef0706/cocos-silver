@@ -1,24 +1,33 @@
 
 import { useEffect, useState } from 'react';
-import { PRODUCTOS, CATEGORIAS, type Producto } from '../datos';
+import { CATEGORIAS, type Producto } from '../datos';
 import { cargarCatalogo } from '../catalogoSanity';
 import TarjetaProducto from '../components/TarjetaProducto';
 
 function Recursos() {
   const [categoria, setCategoria] = useState('Todos');
   const [busqueda, setBusqueda] = useState('');
-  const [productos, setProductos] = useState<Producto[]>(PRODUCTOS);
+
+  // No mostrar productos antiguos mientras carga Sanity
+  const [productos, setProductos] = useState<Producto[]>([]);
   const [cargando, setCargando] = useState(true);
 
+  // Consultar los productos publicados en Sanity
   useEffect(() => {
     let activo = true;
 
-    async function cargar() {
+    async function cargarProductos() {
       try {
         const resultado = await cargarCatalogo();
 
         if (activo) {
           setProductos(resultado);
+        }
+      } catch (error) {
+        console.error('Error al cargar el catálogo:', error);
+
+        if (activo) {
+          setProductos([]);
         }
       } finally {
         if (activo) {
@@ -27,22 +36,24 @@ function Recursos() {
       }
     }
 
-    void cargar();
+    void cargarProductos();
 
     return () => {
       activo = false;
     };
   }, []);
 
+  // Filtrar por categoría y nombre o descripción
   const productosFiltrados = productos.filter((producto) => {
     const coincideCategoria =
-      categoria === 'Todos' || producto.categoria === categoria;
+      categoria === 'Todos' ||
+      producto.categoria === categoria;
 
-    const texto = busqueda.toLowerCase();
+    const textoBusqueda = busqueda.trim().toLowerCase();
 
     const coincideBusqueda =
-      producto.nombre.toLowerCase().includes(texto) ||
-      producto.descripcion.toLowerCase().includes(texto);
+      producto.nombre.toLowerCase().includes(textoBusqueda) ||
+      producto.descripcion.toLowerCase().includes(textoBusqueda);
 
     return coincideCategoria && coincideBusqueda;
   });
@@ -50,13 +61,22 @@ function Recursos() {
   return (
     <main className="catalogo">
       <section className="catalogo__encabezado">
-        <span className="hero__etiqueta">Nuestra colección</span>
+        <span className="hero__etiqueta">
+          Nuestra colección
+        </span>
+
         <h1>Joyería Cocos Silver</h1>
-        <p>Encuentra la pieza perfecta para complementar tu estilo.</p>
+
+        <p>
+          Encuentra la pieza perfecta para complementar tu estilo.
+        </p>
       </section>
 
       <div className="buscador">
-        <label htmlFor="buscar-producto" className="buscador__label">
+        <label
+          htmlFor="buscar-producto"
+          className="buscador__label"
+        >
           Buscar joya
         </label>
 
@@ -74,7 +94,12 @@ function Recursos() {
         {CATEGORIAS.map((item) => (
           <button
             key={item}
-            className={categoria === item ? 'filtro filtro--activo' : 'filtro'}
+            type="button"
+            className={
+              categoria === item
+                ? 'filtro filtro--activo'
+                : 'filtro'
+            }
             onClick={() => setCategoria(item)}
           >
             {item}
@@ -83,29 +108,41 @@ function Recursos() {
       </div>
 
       {cargando && (
-        <p role="status" style={{ textAlign: 'center' }}>
+        <p
+          role="status"
+          style={{
+            textAlign: 'center',
+            padding: '2rem',
+          }}
+        >
           Actualizando catálogo...
         </p>
       )}
 
-      <section className="productos-grid">
-        {productosFiltrados.length > 0 ? (
-          productosFiltrados.map((producto) => (
-            <TarjetaProducto
-              key={producto.id}
-              producto={producto}
-            />
-          ))
-        ) : (
-          <div className="estado-vacio">
-            <span>🔎</span>
-            <h2>No encontramos resultados</h2>
-            <p>
-              Intenta buscar otra joya o seleccionar otra categoría.
-            </p>
-          </div>
-        )}
-      </section>
+      {!cargando && (
+        <section className="productos-grid">
+          {productosFiltrados.length > 0 ? (
+            productosFiltrados.map((producto) => (
+              <TarjetaProducto
+                key={producto.id}
+                producto={producto}
+              />
+            ))
+          ) : (
+            <div className="estado-vacio">
+              <span>🔎</span>
+
+              <h2>No encontramos resultados</h2>
+
+              <p>
+                No hay productos disponibles que coincidan
+                con tu búsqueda. Intenta otra categoría
+                o vuelve a consultar más tarde.
+              </p>
+            </div>
+          )}
+        </section>
+      )}
     </main>
   );
 }

@@ -3,11 +3,11 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import TarjetaProducto from '../components/TarjetaProducto';
-import { PRODUCTOS, type Producto } from '../datos';
+import type { Producto } from '../datos';
 import { cargarCatalogo } from '../catalogoSanity';
 
 function Inicio() {
-  const [productos, setProductos] = useState<Producto[]>(PRODUCTOS);
+  const [productos, setProductos] = useState<Producto[]>([]);
 
   useEffect(() => {
     let activo = true;
