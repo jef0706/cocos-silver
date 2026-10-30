@@ -1,18 +1,48 @@
-import { useState } from 'react';
-import { PRODUCTOS, CATEGORIAS } from '../datos';
+
+import { useEffect, useState } from 'react';
+import { PRODUCTOS, CATEGORIAS, type Producto } from '../datos';
+import { cargarCatalogo } from '../catalogoSanity';
 import TarjetaProducto from '../components/TarjetaProducto';
 
 function Recursos() {
   const [categoria, setCategoria] = useState('Todos');
   const [busqueda, setBusqueda] = useState('');
+  const [productos, setProductos] = useState<Producto[]>(PRODUCTOS);
+  const [cargando, setCargando] = useState(true);
 
-  const productosFiltrados = PRODUCTOS.filter((producto) => {
+  useEffect(() => {
+    let activo = true;
+
+    async function cargar() {
+      try {
+        const resultado = await cargarCatalogo();
+
+        if (activo) {
+          setProductos(resultado);
+        }
+      } finally {
+        if (activo) {
+          setCargando(false);
+        }
+      }
+    }
+
+    void cargar();
+
+    return () => {
+      activo = false;
+    };
+  }, []);
+
+  const productosFiltrados = productos.filter((producto) => {
     const coincideCategoria =
       categoria === 'Todos' || producto.categoria === categoria;
 
+    const texto = busqueda.toLowerCase();
+
     const coincideBusqueda =
-      producto.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
-      producto.descripcion.toLowerCase().includes(busqueda.toLowerCase());
+      producto.nombre.toLowerCase().includes(texto) ||
+      producto.descripcion.toLowerCase().includes(texto);
 
     return coincideCategoria && coincideBusqueda;
   });
@@ -52,16 +82,27 @@ function Recursos() {
         ))}
       </div>
 
+      {cargando && (
+        <p role="status" style={{ textAlign: 'center' }}>
+          Actualizando catálogo...
+        </p>
+      )}
+
       <section className="productos-grid">
         {productosFiltrados.length > 0 ? (
           productosFiltrados.map((producto) => (
-            <TarjetaProducto key={producto.id} producto={producto} />
+            <TarjetaProducto
+              key={producto.id}
+              producto={producto}
+            />
           ))
         ) : (
           <div className="estado-vacio">
             <span>🔎</span>
             <h2>No encontramos resultados</h2>
-            <p>Intenta buscar otra joya o seleccionar otra categoría.</p>
+            <p>
+              Intenta buscar otra joya o seleccionar otra categoría.
+            </p>
           </div>
         )}
       </section>

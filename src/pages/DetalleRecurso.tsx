@@ -1,19 +1,53 @@
+
+import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { PRODUCTOS } from '../datos';
+import { type Producto } from '../datos';
+import { cargarCatalogo } from '../catalogoSanity';
 
 function DetalleRecurso() {
   const { id } = useParams();
 
-  const producto = PRODUCTOS.find(
-    (producto) => producto.id === Number(id),
+  const [productos, setProductos] = useState<Producto[]>([]);
+  const [cargando, setCargando] = useState(true);
+
+  useEffect(() => {
+    let activo = true;
+
+    cargarCatalogo()
+      .then((resultado) => {
+        if (activo) {
+          setProductos(resultado);
+        }
+      })
+      .finally(() => {
+        if (activo) {
+          setCargando(false);
+        }
+      });
+
+    return () => {
+      activo = false;
+    };
+  }, []);
+
+  const producto = productos.find(
+    (item) => String(item.id) === id
   );
+
+  if (cargando) {
+    return (
+      <main className="detalle-producto">
+        <p role="status">Cargando información de la joya...</p>
+      </main>
+    );
+  }
 
   if (!producto) {
     return (
       <main className="detalle-producto">
         <h1>Producto no encontrado</h1>
 
-        <p>La joya que buscas no existe.</p>
+        <p>La joya que buscas no existe o no está disponible.</p>
 
         <Link to="/joyeria" className="boton boton--principal">
           Volver a la colección
@@ -23,7 +57,7 @@ function DetalleRecurso() {
   }
 
   const mensajeWhatsApp = encodeURIComponent(
-    `Hola, me interesa ${producto.nombre} de Q${producto.precio}. ¿Está disponible?`,
+    `Hola, me interesa ${producto.nombre} de Q${producto.precio}. ¿Está disponible?`
   );
 
   const enlaceWhatsApp =

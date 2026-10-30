@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import {
   BrowserRouter,
   Routes,
@@ -10,7 +10,8 @@ import Navbar from './components/Navbar';
 import Inicio from './pages/Inicio';
 import Footer from './components/Footer';
 import WhatsAppBoton from './components/WhatsAppBoton';
-import { PRODUCTOS } from './datos';
+import { PRODUCTOS, type Producto } from './datos';
+import { cargarCatalogo } from './catalogoSanity';
 
 const Recursos = lazy(() => import('./pages/Recursos'));
 const DetalleRecurso = lazy(() => import('./pages/DetalleRecurso'));
@@ -36,6 +37,22 @@ function actualizarMeta(propiedad: string, contenido: string) {
 
 function TituloPagina() {
   const location = useLocation();
+    const [productos, setProductos] = useState<Producto[]>(PRODUCTOS);
+
+  useEffect(() => {
+    let activo = true;
+
+    cargarCatalogo().then((resultado) => {
+      if (activo) {
+        setProductos(resultado);
+      }
+    });
+
+    return () => {
+      activo = false;
+    };
+  }, []);
+
 
   useEffect(() => {
     const datosPorRuta: Record<
@@ -69,8 +86,11 @@ function TituloPagina() {
     let tipoContenido = 'website';
 
     if (location.pathname.startsWith('/joyeria/')) {
-      const id = Number(location.pathname.split('/').pop());
-      const producto = PRODUCTOS.find((item) => item.id === id);
+      const id = location.pathname.split('/').pop();
+
+const producto = productos.find(
+  (item) => String(item.id) === id
+);
 
       datos = producto
         ? {
@@ -132,7 +152,7 @@ function TituloPagina() {
     actualizarMeta('og:image', imagen);
     actualizarMeta('og:site_name', 'Cocos Silver');
     actualizarMeta('og:locale', 'es_GT');
-  }, [location.pathname]);
+  }, [location.pathname, productos]);
 
   return null;
 }

@@ -1388,3 +1388,12 @@ section[id] {
 .footer__red-social span {
   min-width: 0;
 }
+
+
+/* CATÁLOGO: evitar tarjetas demasiado anchas */
+.catalogo .productos-grid {
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min(100%, 240px), 1fr)
+  );
+}
