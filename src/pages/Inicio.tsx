@@ -1,11 +1,32 @@
+
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import TarjetaProducto from '../components/TarjetaProducto';
-import { PRODUCTOS } from '../datos';
-
+import type { Producto } from '../datos';
+import { cargarCatalogo } from '../catalogoSanity';
 
 function Inicio() {
-  const destacados = PRODUCTOS.filter((producto) => producto.destacado);
+  const [productos, setProductos] = useState<Producto[]>([]);
+
+  useEffect(() => {
+    let activo = true;
+
+    cargarCatalogo().then((resultado) => {
+      if (activo) {
+        setProductos(resultado);
+      }
+    });
+
+    return () => {
+      activo = false;
+    };
+  }, []);
+
+  const destacados = productos.filter(
+    (producto) => producto.destacado
+  );
+
 
   return (
     <main>
