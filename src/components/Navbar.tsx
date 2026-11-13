@@ -9,6 +9,7 @@ function Navbar() {
 
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => {
+      setMenuAbierto(false);
       if (location.hash) {
         document
           .getElementById(location.hash.slice(1))
